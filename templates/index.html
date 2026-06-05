@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flask Calculator</title>
+    <title>Smart Calculator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<div class="container">
-    <h2>Calculator App</h2>
+<div class="calculator-card">
+    <h1>🧮 Smart Calculator</h1>
 
     <form method="POST">
-        <input type="number" step="any" name="num1" placeholder="First Number" required>
+        <input type="number" step="any" name="num1" placeholder="Enter First Number" required>
 
         <select name="operation">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
+            <option value="+">Addition (+)</option>
+            <option value="-">Subtraction (-)</option>
+            <option value="*">Multiplication (×)</option>
+            <option value="/">Division (÷)</option>
         </select>
 
-        <input type="number" step="any" name="num2" placeholder="Second Number" required>
+        <input type="number" step="any" name="num2" placeholder="Enter Second Number" required>
 
         <button type="submit">Calculate</button>
     </form>
 
     {% if result != "" %}
-        <h3>Result: {{ result }}</h3>
+    <div class="result-box">
+        Result: {{ result }}
+    </div>
     {% endif %}
 </div>
 
